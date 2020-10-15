@@ -19,7 +19,7 @@ public class Room {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String roomNum;
+	private Integer roomNum;
 
 	@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)

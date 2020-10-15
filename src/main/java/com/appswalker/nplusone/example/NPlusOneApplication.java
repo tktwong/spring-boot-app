@@ -1,7 +1,7 @@
 package com.appswalker.nplusone.example;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.appswalker.nplusone.example.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +14,35 @@ import com.appswalker.nplusone.example.model.House;
 import com.appswalker.nplusone.example.repository.HouseRepository;
 
 @SpringBootApplication
-public class EntitygraphApplication implements CommandLineRunner {
+public class NPlusOneApplication implements CommandLineRunner {
 
 	@Autowired
 	HouseRepository houseRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(EntitygraphApplication.class, args);
+		SpringApplication.run(NPlusOneApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		House house = new House();
-		Set<Door> doors = new HashSet<>();
+		List<Door> doors = new ArrayList<>();
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
+		doors.add(new Door());
 		doors.add(new Door());
 		doors.add(new Door());
 		doors.add(new Door());
@@ -34,10 +50,10 @@ public class EntitygraphApplication implements CommandLineRunner {
 			door.setHouse(house);
 		}
 		house.setDoors(doors);
-		Set<Room> rooms = new HashSet<>();
-		rooms.add(Room.builder().roomNum("101").build());
-		rooms.add(Room.builder().roomNum("102").build());
-		rooms.add(Room.builder().roomNum("103").build());
+		List<Room> rooms = new ArrayList<>();
+		rooms.add(Room.builder().roomNum(101).build());
+		rooms.add(Room.builder().roomNum(102).build());
+		rooms.add(Room.builder().roomNum(103).build());
 		for (Room room : rooms) {
 			room.setHouse(house);
 		}

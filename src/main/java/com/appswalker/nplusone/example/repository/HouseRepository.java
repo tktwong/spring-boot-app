@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HouseRepository extends JpaRepository<House, Long> {
 
-	@EntityGraph(attributePaths = { "rooms", "doors" })
+//	@EntityGraph(attributePaths = { "rooms", "doors" })
+//  EntityGraph needs to implement Set for @OneToMany
 	@Query("SELECT ho FROM House ho")
 	List<House> customQuery();
 }
