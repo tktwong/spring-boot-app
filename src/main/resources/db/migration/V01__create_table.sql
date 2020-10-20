@@ -1,13 +1,13 @@
-CREATE TABLE LIVRO (
-	ID_LIVRO BIGSERIAL,
-	TITULO VARCHAR(64) NOT NULL,
-	AUTOR VARCHAR(64) NOT NULL,
-	CONSTRAINT PK_ID_LIVRO PRIMARY KEY (ID_LIVRO)
+CREATE TABLE book (
+	id BIGSERIAL,
+	title VARCHAR(64) NOT NULL,
+	author VARCHAR(64) NOT NULL,
+	CONSTRAINT PK_BOOK PRIMARY KEY (id)
 );
 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (100, 'Uma Breve História do Tempo', 'Stephen Hawking'); 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (101, 'Uma Comovente Obra de Espantoso Talento', 'Dave Eggers'); 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (102, 'Muito Longe de Casa', 'Ishmael Beah'); 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (103, 'Uma Dobra no Tempo', 'Madeleine L’Engle'); 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (104, 'Selected Stories, 1968-1994', 'Alice Munro'); 
-INSERT INTO LIVRO (ID_LIVRO, TITULO, AUTOR) VALUES (105, 'Abundância - o Futuro É Melhor do Que Você Imagina ', 'Kotler,Steven / Diamandis,Peter H.'); 
+INSERT INTO book (id, title, author) VALUES (100, 'Uma Breve História do Tempo', 'Stephen Hawking');
+INSERT INTO book (id, title, author) VALUES (101, 'Uma Comovente Obra de Espantoso Talento', 'Dave Eggers');
+INSERT INTO book (id, title, author) VALUES (102, 'Muito Longe de Casa', 'Ishmael Beah');
+INSERT INTO book (id, title, author) VALUES (103, 'Uma Dobra no Tempo', 'Madeleine L’Engle');
+INSERT INTO book (id, title, author) VALUES (104, 'Selected Stories, 1968-1994', 'Alice Munro');
+INSERT INTO book (id, title, author) VALUES (105, 'Abundância - o Futuro É Melhor do Que Você Imagina ', 'Kotler,Steven / Diamandis,Peter H.');
