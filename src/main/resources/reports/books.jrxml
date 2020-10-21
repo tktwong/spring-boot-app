@@ -58,9 +58,9 @@
 			<![CDATA[]]>
 		</queryString>
 	</subDataset>
-	<parameter name="nome" class="java.lang.String"/>
-	<parameter name="cabecalho" class="java.lang.String"/>
-	<parameter name="assinatura" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="comment" class="java.lang.String"/>
+	<parameter name="title" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select id, title, author from book]]>
 	</queryString>
@@ -86,7 +86,7 @@
 			</line>
 			<image hAlign="Center">
 				<reportElement x="0" y="0" width="160" height="50" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-				<imageExpression><![CDATA["relatorios/spring-by-pivotal.png"]]></imageExpression>
+				<imageExpression><![CDATA["reports/spring-by-pivotal.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="173" y="10" width="210" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
@@ -96,25 +96,25 @@
 				<textElement>
 					<font size="19" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Listagem de Livros]]></text>
+				<text><![CDATA[Books List]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="173" y="35" width="210" height="15" uuid="4c1fe557-3075-4830-ae6d-61484eeb51ad"/>
 				<textElement markup="none"/>
-				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="44">
-			<printWhenExpression><![CDATA[$P{cabecalho} != null]]></printWhenExpression>
+			<printWhenExpression><![CDATA[$P{comment} != null]]></printWhenExpression>
 			<textField isBlankWhenNull="true">
 				<reportElement stretchType="RelativeToBandHeight" x="30" y="10" width="352" height="21" uuid="9fdae477-753a-4724-8238-986430b8bf01"/>
 				<box topPadding="0" leftPadding="6" bottomPadding="0" rightPadding="0">
 					<leftPen lineWidth="2.0"/>
 				</box>
 				<textElement verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression><![CDATA[$P{cabecalho}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{comment}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -148,7 +148,7 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<text><![CDATA[Autor]]></text>
+				<text><![CDATA[Author]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -191,7 +191,7 @@
 	</detail>
 	<lastPageFooter>
 		<band height="61">
-			<printWhenExpression><![CDATA["SIM".equalsIgnoreCase($P{assinatura})]]></printWhenExpression>
+			<printWhenExpression><![CDATA["MR.".equalsIgnoreCase($P{title})]]></printWhenExpression>
 			<line>
 				<reportElement x="30" y="40" width="200" height="1" uuid="12cc4090-97d4-4bd5-82d8-64033e16681a">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -206,7 +206,7 @@
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<text><![CDATA[Assinatura]]></text>
+				<text><![CDATA[Title]]></text>
 			</staticText>
 		</band>
 	</lastPageFooter>

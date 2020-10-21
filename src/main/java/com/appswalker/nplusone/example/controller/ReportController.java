@@ -25,16 +25,16 @@ public class ReportController {
 	private DataSource dataSource;
 
 	@PostMapping
-	public void imprimir(@RequestParam Map<String, Object> parametros, HttpServletResponse response) throws JRException, SQLException, IOException {
+	public void export(@RequestParam Map<String, Object> books, HttpServletResponse response) throws JRException, SQLException, IOException {
 		
-		parametros = parametros == null ? parametros = new HashMap<>() : parametros;
-		InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/livros.jasper");
+		books = books == null ? new HashMap<>() : books;
+		InputStream jasperStream = this.getClass().getResourceAsStream("/reports/books.jasper");
 		
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, dataSource.getConnection());
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, books, dataSource.getConnection());
 
 		response.setContentType("application/pdf");
-		response.setHeader("Content-Disposition", "inline; filename=livros.pdf");
+		response.setHeader("Content-Disposition", "inline; filename=books.pdf");
 
 		final OutputStream outStream = response.getOutputStream();
 		JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);

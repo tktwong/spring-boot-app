@@ -7,20 +7,20 @@ import com.appswalker.nplusone.example.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.appswalker.nplusone.example.model.Door;
 import com.appswalker.nplusone.example.model.House;
 import com.appswalker.nplusone.example.repository.HouseRepository;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NPlusOneApplication implements CommandLineRunner {
+public class SpringBootDemoApplication implements CommandLineRunner {
 
 	@Autowired
 	HouseRepository houseRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(NPlusOneApplication.class, args);
+		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}
 
 	@Override
