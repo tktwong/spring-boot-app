@@ -25,39 +25,40 @@ public class SpringBootDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		House house = new House();
-		List<Door> doors = new ArrayList<>();
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		doors.add(new Door());
-		for (Door door : doors) {
-			door.setHouse(house);
-		}
-		house.setDoors(doors);
-		List<Room> rooms = new ArrayList<>();
-		rooms.add(Room.builder().roomNum(101).build());
-		rooms.add(Room.builder().roomNum(102).build());
-		rooms.add(Room.builder().roomNum(103).build());
-		for (Room room : rooms) {
-			room.setHouse(house);
-		}
-		house.setRooms(rooms);
-		houseRepository.save(house);
+//		House house = new House();
+//		house = houseRepository.save(house);
+//		List<Door> doors = new ArrayList<>();
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		doors.add(new Door());
+//		for (Door door : doors) {
+//			door.setHouse(house);
+//		}
+//		house.setDoors(doors);
+//		List<Room> rooms = new ArrayList<>();
+//		rooms.add(Room.builder().roomNum(101).build());
+//		rooms.add(Room.builder().roomNum(102).build());
+//		rooms.add(Room.builder().roomNum(103).build());
+//		for (Room room : rooms) {
+//			room.setHouse(house);
+//		}
+//		house.setRooms(rooms);
+//		houseRepository.save(house);
 	}
 }
